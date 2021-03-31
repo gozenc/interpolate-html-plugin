@@ -1,0 +1,24 @@
+{
+  "name": "interpolate-html-plugin",
+  "version": "1.0.0",
+  "description": "InterpolateHtmlPlugin implemented for webpack@5. No dependencies.",
+  "main": "./dist/index.js",
+  "license": "MIT",
+  "author": {
+    "name": "Fatih Gözenç",
+    "email": "fatihgozenc@gmail.com",
+    "url": "https://fatihgozenc.com"
+  },
+  "scripts": {
+      "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^14.14.37",
+    "eslint": "^7.23.0",
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "html-webpack-plugin": "^5.3.1",
+    "prettier": "^2.2.1",
+    "typescript": "^4.2.3",
+    "webpack": "^5.28.0"
+  }
+}
