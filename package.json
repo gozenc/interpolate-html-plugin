@@ -1,5 +1,5 @@
 {
-    "name": "@fatihgozenc/interpolate-html-plugin",
+    "name": "@gozenc/interpolate-html-plugin",
     "version": "1.0.0",
     "description": "InterpolateHtmlPlugin implemented for webpack v5.",
     "main": "./dist/index.js",
@@ -14,10 +14,17 @@
         "type": "git"
     },
     "scripts": {
+        "build": "rm -rf ./dist/* && tsc && yarn compile && sleep 3 && yarn clean",
+        "compile": "yarn terse:index && yarn terse:interpolator",
+        "clean": "rm -rf ./dist/*.js && yarn clean:index && yarn clean:interpolator",
+        "clean:index": "cat ./dist/1.tmp | sed 1d > ./dist/index.js",
+        "clean:interpolator": "cat ./dist/2.tmp | sed 1d > ./dist/Interpolator.js && rm dist/*.tmp",
+        "mock": "rm -rf ./test/dist/* tsc && webpack",
+        "rename": "find ./dist -name '*.tmp' -print0 | xargs --null -I{} mv {} {}.js",
         "test": "jest",
-        "cleanup": "rm ./dist/index.js && mv ./dist/temp ./dist/index.js",
-        "compile": "terser -c -m -- ./dist/index.js > ./dist/temp",
-        "build": "rm -rf dist/* && tsc && yarn compile && yarn cleanup"
+        "terse": "terser -c -m --",
+        "terse:index": "yarn terse ./dist/index.js > ./dist/1.tmp &",
+        "terse:interpolator": "yarn terse ./dist/Interpolator.js > ./dist/2.tmp &"
     },
     "devDependencies": {
         "@types/jest": "^26.0.22",
@@ -25,12 +32,16 @@
         "@types/webpack": "^5.28.0",
         "eslint": "^7.23.0",
         "eslint-plugin-jsdoc": "^32.3.0",
+        "fork-ts-checker-webpack-plugin": "^6.2.0",
         "html-webpack-plugin": "^5.3.1",
         "jest": "^26.6.3",
         "prettier": "^2.2.1",
         "terser": "^5.6.1",
+        "terser-webpack-plugin": "^5.1.1",
         "ts-jest": "^26.5.4",
+        "ts-loader": "^8.1.0",
         "typescript": "^4.2.3",
-        "webpack": "^5.28.0"
+        "webpack": "^5.28.0",
+        "webpack-cli": "^4.6.0"
     }
 }

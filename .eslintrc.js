@@ -10,6 +10,7 @@ module.exports = {
         strict: 1
     },
     ignorePatterns: [
-        "dist/*.js"
+        "dist/*.js",
+        "*.config.js"
     ],
 }
