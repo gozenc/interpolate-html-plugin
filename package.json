@@ -9,7 +9,9 @@
         "interpolate-html-plugin",
         "HTML interpolation",
         "react-dev-utils",
-        "plugin"
+        "plugin",
+        "fatihgozenc",
+        "gozenc"
     ],
     "main": "./dist/index.js",
     "license": "MIT",
