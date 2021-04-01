@@ -9,6 +9,10 @@
         "email": "fatihgozenc@gmail.com",
         "url": "https://fatihgozenc.com"
     },
+    "repository": {
+        "url": "https://github.com/fatihgozenc/interpolate-html-plugin",
+        "type": "git"
+    },
     "scripts": {
         "test": "jest",
         "cleanup": "rm ./dist/index.js && mv ./dist/temp ./dist/index.js",
