@@ -1,13 +1,15 @@
 "use strict"
 
 module.exports = {
-        env: {
-            node: true
-        },
-        extends: ["plugin:jsdoc/recommended"],
-        rules: {
-            // Override our default settings just for this directory
-            eqeqeq: "warn",
-            strict: 1
-        }
+    env: {
+        node: true
+    },
+    extends: ["plugin:jsdoc/recommended"],
+    rules: {
+        eqeqeq: "error",
+        strict: 1
+    },
+    ignorePatterns: [
+        "dist/*.js"
+    ],
 }

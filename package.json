@@ -1,24 +1,32 @@
 {
-  "name": "interpolate-html-plugin",
-  "version": "1.0.0",
-  "description": "InterpolateHtmlPlugin implemented for webpack@5. No dependencies.",
-  "main": "./dist/index.js",
-  "license": "MIT",
-  "author": {
-    "name": "Fatih Gözenç",
-    "email": "fatihgozenc@gmail.com",
-    "url": "https://fatihgozenc.com"
-  },
-  "scripts": {
-      "build": "tsc"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.37",
-    "eslint": "^7.23.0",
-    "eslint-plugin-jsdoc": "^32.3.0",
-    "html-webpack-plugin": "^5.3.1",
-    "prettier": "^2.2.1",
-    "typescript": "^4.2.3",
-    "webpack": "^5.28.0"
-  }
+    "name": "@gozenc/interpolate-html-plugin",
+    "version": "1.0.0",
+    "description": "InterpolateHtmlPlugin implemented for webpack v5.",
+    "main": "./dist/index.js",
+    "license": "MIT",
+    "author": {
+        "name": "Fatih Gözenç",
+        "email": "fatihgozenc@gmail.com",
+        "url": "https://fatihgozenc.com"
+    },
+    "scripts": {
+        "test": "jest",
+        "cleanup": "rm ./dist/index.js && mv ./dist/temp ./dist/index.js",
+        "compile": "terser -c -m -- ./dist/index.js > ./dist/temp",
+        "build": "rm -rf dist/* && tsc && yarn compile && yarn cleanup"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.22",
+        "@types/node": "^14.14.37",
+        "@types/webpack": "^5.28.0",
+        "eslint": "^7.23.0",
+        "eslint-plugin-jsdoc": "^32.3.0",
+        "html-webpack-plugin": "^5.3.1",
+        "jest": "^26.6.3",
+        "prettier": "^2.2.1",
+        "terser": "^5.6.1",
+        "ts-jest": "^26.5.4",
+        "typescript": "^4.2.3",
+        "webpack": "^5.28.0"
+    }
 }
