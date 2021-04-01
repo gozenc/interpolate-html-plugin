@@ -8,16 +8,16 @@ It works in combination with latest versions of [`HtmlWebpackPlugin`](https://gi
 
 ## Installation
 
-|                   | NPM                                        | YARN                                          |
-| ----------------: | ------------------------------------------ | --------------------------------------------- |
-| **Prerequisites** | `npm i -D webpack html-webpack-plugin`     | `yarn add -D webpack html-webpack-plugin`     |
-|    **Installing** | `npm i -D @gozenc/interpolate-html-plugin` | `yarn add -D @gozenc/interpolate-html-plugin` |
+|                   | NPM                                             | YARN                                               |
+| ----------------: | ----------------------------------------------- | -------------------------------------------------- |
+| **Prerequisites** | `npm i -D webpack html-webpack-plugin`          | `yarn add -D webpack html-webpack-plugin`          |
+|    **Installing** | `npm i -D @fatihgozenc/interpolate-html-plugin` | `yarn add -D @fatihgozenc/interpolate-html-plugin` |
 
 ## Usage
 
 ```js
 const HtmlWebpackPlugin = require("html-webpack-plugin")
-const InterpolateHtmlPlugin = require("@gozenc/interpolate-html-plugin")
+const InterpolateHtmlPlugin = require("@fatihgozenc/interpolate-html-plugin")
 // In the webpack.config file:
 ...
 plugins: [
